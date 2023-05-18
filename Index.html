@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Golf Tracker</title>
+  <style>
+    .small-input {
+      width: 50px; /* Adjust the width as needed */
+    }
+    .table-container {
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Golf Tracker</h1>
+
+      <div class="table-container"> <!-- Add a container to enable horizontal scrolling -->
+        <table class="table is-fullwidth"> <!-- Add 'is-fullwidth' class -->
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>HCap</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>Sum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="text" class="sum-input" disabled></td> <!-- Add class "sum-input" -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container"> <!-- Add a container to enable horizontal scrolling -->
+        <table class="table is-fullwidth"> <!-- Add 'is-fullwidth' class -->
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>HCap</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>Sum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="text" class="sum-input" disabled></td> <!-- Add class "sum-input" -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container"> <!-- Add a container to enable horizontal scrolling -->
+        <table class="table is-fullwidth"> <!-- Add 'is-fullwidth' class -->
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>HCap</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>Sum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="text" class="sum-input" disabled></td> <!-- Add class "sum-input" -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container"> <!-- Add a container to enable horizontal scrolling -->
+        <table class="table is-fullwidth"> <!-- Add 'is-fullwidth' class -->
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>HCap</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>Sum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="number" class="small-input"></td>
+              <td><input type="text" class="sum-input" disabled></td> <!-- Add class "sum-input" -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <button id="submitBtn" class="button is-primary">Submit</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
