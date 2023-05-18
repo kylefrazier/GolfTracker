@@ -1,2 +1,4 @@
 # GolfTracker
- Tracks golfing information and emails it to an admin.
+https://kylefrazier.github.io/GolfTracker/
+## Introduction
+Tracks golfing information and emails it to an admin.
