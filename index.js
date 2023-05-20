@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tableContainer = document.querySelector('.table-container');
     const submitButton = document.querySelector('#submitBtn');
-
     for (let i = 0; i < 3; i++) {
         const clonedTableContainer = tableContainer.cloneNode(true);
         tableContainer.parentNode.insertBefore(clonedTableContainer, tableContainer.nextSibling);
@@ -23,35 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.addEventListener('click', event => {
         event.preventDefault(); // Prevent the default form submission
 
-        // Create an array to store the table contents
-        const tableContents = [];
+        const cells = Array.from(document.querySelectorAll('td'));
 
-        // Get the table
-        const table = document.getElementById('golfTable');
-
-        // Get the table rows
-        const rows = Array.from(document.querySelectorAll('tr'));
-
-        // Loop through each row
-        const rowData = rows.map(row => {
-            // Get the table cells in the row
-            const cells = Array.from(row.querySelectorAll('th, td'));
-
-            // Extract the cell values
-            const cellData = cells.map(cell => {
-                if (cell.tagName === 'TD') {
-                    const input = cell.querySelector('input');
-                    return input ? input.value.trim() : ''; // Get the trimmed input field value if available, or an empty string
-                } else {
-                    return cell.textContent.trim(); // Get the trimmed cell value for th elements
-                }
-            });
-
-            return cellData.join(','); // Join the cell values with commas
+        // Extract the cell values
+        cellData = cells.map(cell => {
+            if (cell.tagName === 'TD') {
+                const input = cell.querySelector('input');
+                return input ? input.value.trim() : ''; // Get the trimmed input field value if available, or an empty string
+            } else {
+                return cell.textContent.trim(); // Get the trimmed cell value for th elements
+            }
         });
 
-
-        tableContents.push(rowData.join('\n')); // Join the row data with line breaks
+        console.log(cellData)
 
         // const toEmail = 'cincitkyle@gmail.com';
         const toEmail = 'kylefe@miamioh.edu';
@@ -60,7 +43,54 @@ document.addEventListener('DOMContentLoaded', () => {
             template_id: 'template_qcx0dtf',
             user_id: 'YPjF8uGmhJBRw_Ta-',
             template_params: {
-                'body': tableContents.join('\n\n'), // Combine the table contents into a single string
+                '1': cellData[0],
+                '2': cellData[1],
+                '3': cellData[2],
+                '4': cellData[3],
+                '5': cellData[4],
+                '6': cellData[5],
+                '7': cellData[6],
+                '8': cellData[7],
+                '9': cellData[8],
+                '10': cellData[9],
+                '11': cellData[10],
+                '12': cellData[11],
+                '13': cellData[12],
+                '14': cellData[13],
+                '15': cellData[14],
+                '16': cellData[15],
+                '17': cellData[16],
+                '18': cellData[17],
+                '19': cellData[18],
+                '20': cellData[19],
+                '21': cellData[20],
+                '22': cellData[21],
+                '23': cellData[22],
+                '24': cellData[23],
+                '25': cellData[24],
+                '26': cellData[25],
+                '27': cellData[26],
+                '28': cellData[27],
+                '29': cellData[28],
+                '30': cellData[29],
+                '31': cellData[30],
+                '32': cellData[31],
+                '33': cellData[32],
+                '34': cellData[33],
+                '35': cellData[34],
+                '36': cellData[35],
+                '37': cellData[36],
+                '38': cellData[37],
+                '39': cellData[38],
+                '40': cellData[39],
+                '41': cellData[40],
+                '42': cellData[41],
+                '43': cellData[42],
+                '44': cellData[43],
+                '45': cellData[44],
+                '46': cellData[45],
+                '47': cellData[46],
+                '48': cellData[47],
                 'email': toEmail
             }
         };
