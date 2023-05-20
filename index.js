@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tableContainer = document.querySelector('.table-container');
+    const submitButton = document.querySelector('#submitBtn');
 
     for (let i = 0; i < 3; i++) {
         const clonedTableContainer = tableContainer.cloneNode(true);
         tableContainer.parentNode.insertBefore(clonedTableContainer, tableContainer.nextSibling);
-    }
 
-    tableContainers.forEach(container => {
-        const smallInputs = container.querySelectorAll('.small-input');
-        const sumInput = container.querySelector('.sum-input');
+        const smallInputs = clonedTableContainer.querySelectorAll('.small-input');
+        const sumInput = clonedTableContainer.querySelector('.sum-input');
 
         smallInputs.forEach(input => {
             input.addEventListener('input', () => {
@@ -19,59 +18,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 sumInput.value = sum;
             });
         });
-    });
+    }
 
-    const submitButton = document.querySelector('#submitBtn');
     submitButton.addEventListener('click', event => {
         event.preventDefault(); // Prevent the default form submission
 
-        // List of all Table Elements
-        const tables = document.querySelectorAll('.table');
-        let emailBody = '';
-        const spacing = '<td colspan="13">|</td>'
+        // Create an array to store the table contents
+        const tableContents = [];
 
-        tables.forEach(table => {
-            const inputs = table.querySelectorAll('input[type="text"], input[type="number"]');
-            let rowContent = '';
+        // Get the table
+        const table = document.getElementById('golfTable');
 
-            inputs.forEach(input => {
-                rowContent += `<td>${input.value}</td>${spacing}`;
+        // Get the table rows
+        const rows = Array.from(document.querySelectorAll('tr'));
+
+        // Loop through each row
+        const rowData = rows.map(row => {
+            // Get the table cells in the row
+            const cells = Array.from(row.querySelectorAll('th, td'));
+
+            // Extract the cell values
+            const cellData = cells.map(cell => {
+                if (cell.tagName === 'TD') {
+                    const input = cell.querySelector('input');
+                    return input ? input.value.trim() : ''; // Get the trimmed input field value if available, or an empty string
+                } else {
+                    return cell.textContent.trim(); // Get the trimmed cell value for th elements
+                }
             });
 
-            emailBody += `<tr>${rowContent}</tr>`;
+            return cellData.join(','); // Join the cell values with commas
         });
 
-        emailBody = `    
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>${spacing}
-                        <th>HCap</th>${spacing}
-                        <th>1</th>${spacing}
-                        <th>2</th>${spacing}
-                        <th>3</th>${spacing}
-                        <th>4</th>${spacing}
-                        <th>5</th>${spacing}
-                        <th>6</th>${spacing}
-                        <th>7</th>${spacing}
-                        <th>8</th>${spacing}
-                        <th>9</th>${spacing}
-                        <th>Sum</th>${spacing}
-                    </tr>
-                </thead>
-                <tbody>
-                    ${emailBody}
-                </tbody>
-            </table>`;
 
-        const toEmail = 'cincitkyle@gmail.com';
-        // const toEmail = 'kylefe@miamioh.edu';
+        tableContents.push(rowData.join('\n')); // Join the row data with line breaks
+
+        // const toEmail = 'cincitkyle@gmail.com';
+        const toEmail = 'kylefe@miamioh.edu';
         var data = {
             service_id: 'service_8edmhy5',
             template_id: 'template_qcx0dtf',
             user_id: 'YPjF8uGmhJBRw_Ta-',
             template_params: {
-                'body': emailBody,
+                'body': tableContents.join('\n\n'), // Combine the table contents into a single string
                 'email': toEmail
             }
         };
