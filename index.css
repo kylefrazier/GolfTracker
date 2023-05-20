@@ -6,6 +6,10 @@
     width: 70px;
 }
 
+.large-input {
+    width: 120px;
+}
+
 .table-container {
     overflow-x: auto;
 }
@@ -20,6 +24,5 @@
     left: 0;
     z-index: 1;
     background-color: #f0f0f0;
-    padding: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
