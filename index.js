@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tableContainers = document.querySelectorAll('.table-container');
+    const tableContainer = document.querySelector('.table-container');
+
+    for (let i = 0; i < 3; i++) {
+        const clonedTableContainer = tableContainer.cloneNode(true);
+        tableContainer.parentNode.insertBefore(clonedTableContainer, tableContainer.nextSibling);
+    }
 
     tableContainers.forEach(container => {
         const smallInputs = container.querySelectorAll('.small-input');
@@ -81,6 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Oops... ' + JSON.stringify(error));
         });
     });
-
-
 });

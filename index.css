@@ -1,0 +1,25 @@
+.small-input {
+    width: 50px;
+}
+
+.medium-input {
+    width: 70px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table-container {
+    overflow-x: auto;
+    position: relative;
+}
+
+.fixed-column {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #f0f0f0;
+    padding: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
