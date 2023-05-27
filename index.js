@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(cellData)
 
-        // const toEmail = 'cincitkyle@gmail.com';
-        const toEmail = 'kylefe@miamioh.edu';
+        const toEmail = 'cincitkyle@gmail.com';
+       
         var data = {
             service_id: 'service_8edmhy5',
             template_id: 'template_qcx0dtf',
